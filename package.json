@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cassandra-driver": "^4.6.4",
+    "creditcard-generator": "^0.0.7",
+    "express": "^4.18.1",
+    "express-session": "^1.17.3",
+    "helmet": "^6.0.0",
+    "http2": "^3.3.7",
+    "http2-express-bridge": "^1.0.7",
+    "jsonwebtoken": "^8.5.1",
+    "memcached": "^2.2.2",
+    "wbm": "^1.1.16",
+    "ws": "^8.8.1"
+  }
+}
