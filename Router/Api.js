@@ -68,10 +68,28 @@ router.post('/account/create/card',(req,res) => {
     if(userPayload.user.roleLevel < 5)return res.send({message: 'Access denied.'});
     if(req.body.customer_id == undefined)return res.send(400).send({message: 'Access denied.'});
     var card = CreateCard();
+<<<<<<< main
+    client.execute('INSERT INTO cards (number,cvv,expriesYear,expriesMonth)');
+=======
     client.execute('INSERT INTO cards (number,cvv,expriesYear,expriesMonth)')
+>>>>>>> main
 });
 
 //Default Permission
 
+<<<<<<< main
+router.post('/account/price/transfer',(req,res) => {
+    var userPayload = jwt.decode(req.headers.authorization,{complete:true})
+    if (userPayload === null) {return res.status(403).send({message: 'Access denied.'});}    
+    //if(userPayload.user.roleLevel < 5)return res.send({message: 'Access denied.'});
+    if(req.body.person_id == undefined || req.body.quantity == undefined)return res.send({message: 'Invalid form.'});
+    var UserMoney;
+    if(Number(UserMoney) < Number(req.body.quantity))return res.send({message: 'Access denied, you need more money.'})
+    var CurrentMoney = Number(UserMoney)-Number(req.body.quantity);
+    var updateSQL = `UPDATE Users SET price = ${CurrentMoney} WHERE id= ${userPayload.user.id}`;
+
+});
+=======
+>>>>>>> main
 
 module.exports = router;
